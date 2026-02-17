@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SaaS Dashboard Test</title>
+</head>
+<body>
+
+<h2>Bold BI Dashboard Test</h2>
+
+<button onclick="loadDashboard()">Load Dashboard</button>
+
+<div id="dashboard-container"></div>
+
+<script>
+
+async function loadDashboard() {
+
+  const response = await fetch("https://your-backend-url.com/get-embed-token", {
+    method: "POST",
+    headers: {
+      "Authorization": "Bearer test-token"
+    }
+  });
+
+  const data = await response.json();
+
+  console.log(data);
+
+  alert("Embed Token Generated. Check console.");
+}
+
+</script>
+
+</body>
+</html>
